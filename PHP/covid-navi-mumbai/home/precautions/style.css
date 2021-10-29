@@ -1,0 +1,287 @@
+body {
+  animation: enterin 5s;
+}
+
+/*
+  6 = cover when you cough
+  7 = dont touch your eyes, mouth and nose frequently/
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+nav {
+  height: 10vh;
+  background: #5b78c7;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  margin-top: 0px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-links li a {
+  transition: 1s color;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.nav-links li a:hover {
+  color: rgb(179, 179, 179);
+  transition: 1s;
+}
+
+.landing h1 {
+  margin: 100px;
+  font-size: 50px;
+  color: #ae5fce;
+}
+
+@media screen and (max-width: 768px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  nav {
+    position: fixed;
+
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #5b78c7;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  .landing {
+    flex-direction: column;
+  }
+  .nav-links li {
+    opacity: 1;
+  }
+  .nav-links li a {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .nav-links {
+    width: 100%;
+  }
+}
+
+
+.sociAL {
+  display: block;
+  margin-top: 20%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pre {
+  margin-top: 150px;
+  margin-bottom: 75px;
+  text-align: center;
+  font-size: 40px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.ones {
+  background-color: #1feac8;
+  border-radius: 0px 100px 0px 100px;
+}
+.preo {
+  margin-top: 1cm;
+  margin-left: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  display: inline-block;
+}
+
+.hw {
+  display: inline-block;
+  margin-left: 80%;
+}
+
+.sc {
+  display: inline-block;
+}
+
+.pret {
+  display: inline-block;
+  margin-left: 80%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #7a7e79;
+}
+
+.home {
+  margin-top: 20%;
+  margin-bottom: 10%;
+  margin-left: 3%;
+  display: inline-block;
+}
+
+.homeT {
+  display: inline-block;
+  margin-left: 70%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: darkblue;
+}
+
+.sneezing {
+  margin-top: 15%;
+  margin-bottom: 10%;
+  margin-left: 2%;
+  display: inline-block;
+}
+
+.sneeze {
+  display: inline-block;
+  margin-left: 50%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #ff0004;
+  font-size: 35px;
+}
+
+@media screen and (max-width: 700px) {
+  .sociAL {
+    height: 20%;
+    width: 50%;
+    margin-top: 20%;
+  }
+
+  .sc {
+    height: 20%;
+    width: 70%;
+    margin-left: 3%;
+  }
+
+  .hw {
+    margin-left: 66%;
+    margin-bottom: 3cm;
+    height: 30%;
+    width: 30%;
+  }
+
+  .pre {
+    margin-top: 20%;
+    font-size: 180%;
+    margin-bottom: 20%;
+  }
+
+  .preo {
+    font-size: 170%;
+  }
+
+  .pret {
+    font-size: 170%;
+  }
+}
+
+@media screen and (max-width: 441px) {
+  .preo {
+    font-size: 170%;
+  }
+
+  .pret {
+    font-size: 170%;
+    margin-left: 60%;
+    margin-bottom: 0cm;
+  }
+
+  .homeT {
+    font-size: 160%;
+    margin-left: 50%;
+  }
+}
+
+.developer {
+  margin-top: 8%;
+  border-radius: 30px;
+  display: block;
+  margin-bottom: 3%;
+  margin-left: 4%;
+  font-family: sans-serif;
+}
+
+.name {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .pret {
+    margin-left: 45%;
+  }
+  .homeT {
+    margin-left: 40%;
+  }
+  .sneeze {
+    margin-left: 40%;
+    font-size: 160%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pret {
+    margin-left: 55%;
+  }
+  .homeT {
+    margin-left: 38%;
+  }
+}
+
+@keyframes enterin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

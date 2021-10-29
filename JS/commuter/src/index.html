@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Commuter</title>
+    <script src="./script/app.js" defer></script>
+    <script src="./codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+    <script src="./codemirror/mode/javascript/javascript.js"></script>
+    <script src=".\codemirror\addon\edit\closebrackets.js"></script>
+    <script src=".\codemirror\addon\display\autorefresh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/prettier@2.3.2/standalone.js"></script>
+    <script src="https://unpkg.com/prettier@2.3.2/parser-graphql.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="mt-4" style="width: 600px; max-width: 700px; margin: 70px">
+      <div class="input-group mb-4">
+        <select class="form-select flex-grow-0 w-auto" id="operation" data-method>
+          <option value="GET" selected>GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+        </select>
+        <input
+          data-url
+          required
+          class="form-control"
+          id="sendform"
+          type="url"
+          placeholder="https://example.com"
+        />
+        <button type="submit" class="btn btn-primary" id="send">Send</button>
+      </div>
+
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openCity(event, 'Headers')"
+          id="defaultOpen"
+        >
+          Headers
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'JSON')">JSON</button>
+      </div>
+
+      <div id="Headers" class="tabcontent">
+        <div id="headerid">
+          <div class="input-group my-2">
+            <input type="text" class="form-control" placeholder="Key" id="parameterKey1"/>
+            <input type="text" class="form-control" placeholder="Value" id="parameterValue1"/>
+            <button type="button" class="btn btn-danger deleteheader">
+              Remove
+            </button>
+          </div>
+          <div id="addHeaders"></div>
+        </div>
+        <button class="btn btn-success mt-2" id="add">Add</button>
+      </div>
+
+      <div id="JSON" class="tabcontent">
+        <div class="mt-4" id="data-json-request-body">
+          <textarea id="editor" style="width: 100%;">
+          </textarea>
+        </div>
+      </div>
+    
+      <br>
+
+      <div class="card" style="width: 100%;" id="response">
+        <div class="card-body">
+          <h5 class="card-title">Response</h5>
+          <div class="d-flex my-2">
+            <div class="me-3">
+              Status: <span data-status></span>
+            </div>
+            <div class="me-3">
+              Time: <span data-time></span>ms
+            </div>
+            <div class="me-3">
+              Size: <span data-size></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card" style="width: 100%;">
+        <div class="card-body">
+          <textarea id="responseeditor"></textarea>
+        </div>
+        <div class="card-body" id="headersIncome">
+          <h5>Response Headers</h5>
+          <br>
+          <div>
+            <textarea id="headerseditor"></textarea>
+          </div>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
