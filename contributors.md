@@ -39,3 +39,12 @@ contribution name
 | name           |    anishghimire603    |
 | profile link   | https://github.com/anishghimire603  |
 | contrubution   |   String reversing program      |
+
+## Bimal
+
+
+| Header         | Description |
+| -----------    | ----------- |
+| name           |    subedibimal    |
+| profile link   | https://github.com/subedibimal  |
+| contrubution   |   Lead Year Calculator Program in Python      |
